@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resp images by @petervangrieken</title>
+  
+  <!-- Only applies to small screens (smaller than 480px) -->
+  <base data-href="images/small/" media="screen and (max-width: 480px)">
+  <!-- Only applies to large screens (large than 480px) -->
+  <base data-href="images/large/" media="screen and (min-width: 480px)">
+  <!-- Fallback, in this case the same as for small screens -->
+  <base href="images/small/">
+
+	<script>
+		nodes = document.querySelectorAll('base[data-href]');
+		nl = nodes.length;
+		
+		for(i = 0; i < nl; i++) {
+			thismedia= nodes[i].getAttribute('media');
+
+			if (window.matchMedia(thismedia).matches) {
+				nodes[i].setAttribute('href',nodes[i].getAttribute('data-href'));
+				break;
+			}
+		}
+	</script>
+  
+  <style type="text/css" media="screen">
+  body { font-family: sans-serif; text-align: center; }
+  img { max-width: 100%;}
+  </style>
+  
+</head>
+<body>
+  
+  <h2>Responsive images test</h2>
+
+  <p>This page is testing a responsive image solution by @<a href="http://twitter.com/petervangrieken">petervangrieken</a> (<a href="http://frozenrockets.nl/labs/resimg/">original post</a>)</p>
+  
+  <p>Resize your browser below 480px and hit refresh to see the small images.</p>
+  
+  <p>Large images: 508kb. Small images: 135kb. Saved for web &amp; ran through <a href="http://imageoptim.com/">ImageOptim</a>.</p>
+
+  <img src="fauna1.jpg">
+  <img src="fauna2.jpg">
+  <img src="fauna3.jpg">
+  <img src="fauna4.jpg">
+  
+  <p>Photography ©<a href="http://www.wolfslittlestore.be">Johan Ronsse</a></p>
+
+</body>
+</html>
