@@ -1,0 +1,1 @@
+Responsive images test - testing solution by @petervangrieken
