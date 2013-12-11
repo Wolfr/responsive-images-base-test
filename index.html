@@ -11,19 +11,19 @@
   <!-- Fallback, in this case the same as for small screens -->
   <base href="images/small/">
 
-	<script>
-		nodes = document.querySelectorAll('base[data-href]');
-		nl = nodes.length;
-		
-		for(i = 0; i < nl; i++) {
-			thismedia= nodes[i].getAttribute('media');
+  <script>
+    nodes = document.querySelectorAll('base[data-href]');
+    nl = nodes.length;
+    
+    for(i = 0; i < nl; i++) {
+      thismedia= nodes[i].getAttribute('media');
 
-			if (window.matchMedia(thismedia).matches) {
-				nodes[i].setAttribute('href',nodes[i].getAttribute('data-href'));
-				break;
-			}
-		}
-	</script>
+      if (window.matchMedia(thismedia).matches) {
+        nodes[i].setAttribute('href',nodes[i].getAttribute('data-href'));
+        break;
+      }
+    }
+  </script>
   
   <style type="text/css" media="screen">
   body { font-family: sans-serif; text-align: center; }
